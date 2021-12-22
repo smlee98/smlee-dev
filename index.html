@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Seungmin Lee</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+
+
+    <link rel="stylesheet" href="css/master.css">
+    <script src="js/master.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="nav-logo" href="#home">
+                <img src="img/logo.svg" alt="logo">
+            </a>
+            <ul class="navbar-nav nav-menu">
+                <li class="nav-item">
+                    <a href="http://instagram.com/thisworld_mean"><i class="bi bi-instagram text-secondary"></i></a>
+                    <a href="https://github.com/smlee98"><i class="bi bi-github text-secondary"></i></a>
+                </li>                
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>    
+    <div id="fullpage">
+        <div class="section" id="home-section">
+            <div class="section-wrap">
+                <div class="home-context">
+                    <div id="my-job">Web Publisher</div>
+                    <div id="my-name">Seungmin Lee</div>
+                </div>
+                <a href="#about"><img id="go-down" src="img/icon_chevron-down.svg" alt="chevron-down"></a>
+            </div>
+        </div>
+        <div class="section" id="about-section">
+            <div class="section-wrap">
+                <div class="row row-cols-4 no-gutters h-100">
+                    <div class="col">
+                        <h2 class="text-black font-weight-bold">HISTORY</h2>
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-4 border-right d-flex align-items-center justify-content-center">
+                                                <strong>2020.03</strong> 
+                                            </div>
+                                            <div class="col-8">
+                                                (주)그리드원<br><small class="text-secondary">솔루션개발본부 UI/UX 파트</small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-4 border-right d-flex align-items-center justify-content-center">
+                                                <strong>2019.02</strong> 
+                                            </div>
+                                            <div class="col-8">
+                                                한국폴리텍대학 청주캠퍼스<br><small class="text-secondary">정보통신시스템과 졸업</small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h2 class="text-black font-weight-bold">CERTIFICATE</h2>
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                    <li class="list-group-item">A fourth item</li>
+                                    <li class="list-group-item">And a fifth one</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h2 class="text-black font-weight-bold">PROJECTS</h2>
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                    <li class="list-group-item">A fourth item</li>
+                                    <li class="list-group-item">And a fifth one</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h2 class="text-black font-weight-bold">AWARDS</h2>
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                    <li class="list-group-item">A fourth item</li>
+                                    <li class="list-group-item">And a fifth one</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section fp-auto-height" id="footer-section">
+            <footer class="bg-dark text-lg-start">
+                Footer
+            </footer>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#fullpage').fullpage({
+                autoScrolling: true,
+                scrollHorizontally: true,
+                slidesNavigation: false,
+                controlArrows: false,
+                anchors:['home','about','footer']
+            });
+        })
+    </script>
+</body>
+</html>
