@@ -3,4 +3,55 @@ extends ../templates/base
 block contents
     section#main
         .container
-            h1 Hello World!
+            canvas#shiba(width="300", height="300")
+
+block scripts
+    script(type="importmap").
+        {
+            "imports": {
+                "three": "/static/lib/three.module.js",
+                "GLTFLoader" : "/static/lib/GLTFLoader.js",
+                "OrbitControls" : "/static/lib/OrbitControls.js"
+            }
+        }
+    script(type="module").
+        import { GLTFLoader } from "GLTFLoader";
+        import { OrbitControls } from "OrbitControls";
+        import * as THREE from "three";
+
+        let scene = new THREE.Scene();
+
+        let camera = new THREE.PerspectiveCamera(30, 1);
+        camera.position.set(0, 0, 5);
+
+        let renderer = new THREE.WebGLRenderer({
+            canvas: document.querySelector("#shiba"),
+            antialias: true,
+        });
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        document.body.appendChild(renderer.domElement);
+
+        scene.background = new THREE.Color("#f7f8f9");
+        let light = new THREE.DirectionalLight(0xffff00, 10);
+        scene.add(light);
+
+        let controls = new OrbitControls(camera, renderer.domElement);
+        controls.rotateSpeed = 1.0;
+        controls.zoomSpeed = 1.2;
+        controls.panSpeed = 0.8;
+        controls.minDistance = 5;
+        controls.maxDistance = 100;
+
+        let loader = new GLTFLoader();
+        loader.load("/static/images/shiba/scene.gltf", function (gltf) {
+            scene.add(gltf.scene);
+            function animate() {
+                requestAnimationFrame(animate);
+
+                gltf.scene.rotation.y += 0.001;
+
+                renderer.render(scene, camera);
+                controls.update;
+            }
+            animate();
+        });
