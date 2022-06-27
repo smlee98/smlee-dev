@@ -1,0 +1,235 @@
+extends ../templates/base
+
+block contents
+    +breadcrumb([])
+    section#main.p-3
+        .container.h-100
+            .d-flex.flex-column.h-100
+                .row.g-3.mb-3
+                    .col-12.col-lg-3
+                        .card.overflow-hidden.h-100
+                            .card-body.p-0
+                                .row.gx-0.gy-3
+                                    .col-4
+                                        .d-flex.justify-content-center.align-items-center.w-100.h-100.bg-secondary
+                                            span.user-thumb.bg-transparent.ratio.ratio-1x1.rounded-circle
+                                                img#user-image.w-100.h-100.rounded-circle(
+                                                    src="/static/images/publisher.png",
+                                                    alt="publisher"
+                                                )
+                                    .col-8
+                                        .d-flex.flex-column.flex-grow-1.px-3.py-2
+                                            #user-info.d-flex.justify-content-center.align-items-center.my-2
+                                                span#user-name.fw-bold 김교보
+                                                span#user-rank (RPA 리더)
+                                            #user-alert.d-flex.flex-column.align-items-center
+                                                a#alert-mypage.alert-item.mb-1(
+                                                    href="#"
+                                                )
+                                                    span.alert-text.me-1(
+                                                        data-bs-toggle="tooltip",
+                                                        data-bs-placement="right",
+                                                        title="라이프사이클 진행 중인 건수 Display"
+                                                    ) 마이페이지
+                                                    span.badge.text-bg-kyobo-blue 99+
+                                                a#alert-task.alert-item.mb-1(
+                                                    href="#"
+                                                )
+                                                    span.alert-text.me-1(
+                                                        data-bs-toggle="tooltip",
+                                                        data-bs-placement="right",
+                                                        title="운영중인 RPA 적용업무 건수 Display"
+                                                    ) 나의 운영과제
+                                                    span.badge.text-bg-kyobo-blue 99+
+                                                a#alert-rpa.alert-item(
+                                                    href="/todayRpa"
+                                                )
+                                                    span.alert-text.me-1(
+                                                        data-bs-toggle="tooltip",
+                                                        data-bs-placement="right",
+                                                        title="확인(검토) 및 승인이 필요한 건수 Display"
+                                                    ) 오늘의 RPA
+                                                    span.badge.text-bg-kyobo-blue 99+
+                    .col-12.col-lg-9
+                        .card.h-100
+                            .card-body
+                                #jumbotron.d-flex.align-items-center.justify-content-center.h-100
+                                    .row.row-cols-2.row-cols-lg-4.g-4.w-100
+                                        .col.col-border
+                                            .d-flex.flex-column.justify-content-center.align-items-center
+                                                span.fs-1.fw-bold 15,000
+                                                span.fs-6 연간업무 절감시간
+                                        .col.col-border
+                                            .d-flex.flex-column.justify-content-center.align-items-center
+                                                span.fs-1.fw-bold 210
+                                                span.fs-6 적용업무
+                                        .col.col-border
+                                            .d-flex.flex-column.justify-content-center.align-items-center
+                                                span.fs-1.fw-bold 160
+                                                span.fs-6 RPA 리더
+                                        .col.col-border
+                                            .d-flex.flex-column.justify-content-center.align-items-center
+                                                span.fs-1.fw-bold 100
+                                                span.fs-6 활용부서
+                .row.g-3
+                    .col-12.col-lg-3
+                        .d-flex.flex-column.h-100
+                            .card.mb-3
+                                .card-body
+                                    a#rpa-suggestion-button(
+                                        role="button",
+                                        href="/lifecycle/rpa-suggestion"
+                                    )
+                                        .d-flex.flex-column.justify-content-center.align-items-center
+                                            lottie-player.mb-3(
+                                                src="https://assets9.lottiefiles.com/packages/lf20_w98qte06.json",
+                                                mode="bounce",
+                                                background="transparent",
+                                                speed="1.25",
+                                                style="width: 150px; height: 150px",
+                                                loop="",
+                                                autoplay=""
+                                            )
+                                            span.fw-bold RPA 업무 제안하기
+                            .card.flex-grow-1
+                                .card-header 
+                                    span.fw-bold 부서 업무 절감시간(연간)
+                                .card-body 
+                                    canvas#mainChart.w-100.h-100
+                                .card-footer
+                                    .d-flex.justify-content-center
+                                        span.text-muted 디지털마케팅팀
+                    .col-12.col-lg-9
+                        .row.g-3
+                            .col-12.col-lg-6
+                                .card.h-100
+                                    .card-header
+                                        .d-flex.justify-content-between.align-items-center
+                                            span.fw-bold RPA 소개
+                                            .card-addon.fw-bold.text-muted.small.lh-1.pointer-cursor
+                                                span 전체보기
+                                                i.bi.bi-chevron-right.ms-1
+                                    .card-body.p-0
+                                        #carousel-rpa.carousel.slide(
+                                            data-bs-ride="carousel"
+                                        )
+                                            .carousel-indicators
+                                                button.active(
+                                                    type="button",
+                                                    data-bs-target="#carousel-rpa",
+                                                    data-bs-slide-to="0",
+                                                    aria-current="true",
+                                                    aria-label="Slide 1"
+                                                )
+                                                button(
+                                                    type="button",
+                                                    data-bs-target="#carousel-rpa",
+                                                    data-bs-slide-to="1",
+                                                    aria-label="Slide 2"
+                                                )
+                                                button(
+                                                    type="button",
+                                                    data-bs-target="#carousel-rpa",
+                                                    data-bs-slide-to="2",
+                                                    aria-label="Slide 3"
+                                                )
+                                                button(
+                                                    type="button",
+                                                    data-bs-target="#carousel-rpa",
+                                                    data-bs-slide-to="3",
+                                                    aria-label="Slide 4"
+                                                )
+                                            .carousel-inner.rounded-bottom
+                                                .carousel-item.active
+                                                    img.d-block.w-100(
+                                                        src="/static/images/rpa-suggestion/1.png"
+                                                    )
+                                                .carousel-item
+                                                    img.d-block.w-100(
+                                                        src="/static/images/rpa-suggestion/2.png"
+                                                    )
+                                                .carousel-item
+                                                    img.d-block.w-100(
+                                                        src="/static/images/rpa-suggestion/3.png"
+                                                    )
+                                                .carousel-item
+                                                    img.d-block.w-100(
+                                                        src="/static/images/rpa-suggestion/4.png"
+                                                    )
+                                            button.carousel-control-prev(
+                                                type="button",
+                                                data-bs-target="#carousel-rpa",
+                                                data-bs-slide="prev"
+                                            )
+                                                i.bi.bi-chevron-left.fs-2.text-dark
+                                            button.carousel-control-next(
+                                                type="button",
+                                                data-bs-target="#carousel-rpa",
+                                                data-bs-slide="next"
+                                            )
+                                                i.bi.bi-chevron-right.fs-2.text-dark
+                            .col-12.col-lg-6
+                                #notice-card.card.h-100
+                                    .card-header
+                                        .d-flex.justify-content-between.align-items-center
+                                            span.fw-bold 공지사항
+                                            .card-addon.fw-bold.text-muted.small.lh-1.pointer-cursor
+                                                a(href="/notice")
+                                                    span 전체보기
+                                                    i.bi.bi-chevron-right.ms-1
+                                    .card-body.p-0
+                                        ul.list-group.list-group-flush.h-100
+                                            li.list-group-item
+                                                span.notice-number.text-muted.me-1 #10
+                                                span.notice-title 동해물과 백두산이
+                                            li.list-group-item
+                                                span.notice-number.text-muted.me-1 #09
+                                                span.notice-title 마르고 닳도록
+                                            li.list-group-item
+                                                span.notice-number.text-muted.me-1 #08
+                                                span.notice-title 하느님이 보우하사
+                                            li.list-group-item 
+                                                span.notice-number.text-muted.me-1 #07
+                                                span.notice-title 우리나라 만세
+                                            li.list-group-item 
+                                                span.notice-number.text-muted.me-1 #06
+                                                span.notice-title 무궁화 삼천리 화려강산
+                            .col-12
+                                .card.h-100
+                                    .card-header
+                                        .d-flex.justify-content-between.align-items-center
+                                            span.fw-bold RPA 업무 현황
+                                            .d-flex.align-items-center.small
+                                                span.text-muted 2022-04-21 17:32
+                                                button.btn.btn-sm.btn-outline-secondary.rounded-2.p-1.lh-1.ms-1(
+                                                    type="button"
+                                                )
+                                                    i.bi.bi-arrow-repeat
+                                    .card-body
+                                        .d-flex
+                                            ul.list-group.list-group-flush.list-group.gantt.flex-grow-1
+                                                li.list-group-item.gantt-desc
+                                                    .d-flex.align-items-center.small
+                                                        span.badge.text-bg-info.me-1 대기
+                                                        span ROBOT A0001
+                                                    p.small.mb-0 디지털마케팅팀 일보 업무 A
+                                                li.list-group-item.gantt-desc
+                                                    .d-flex.align-items-center.small
+                                                        span.badge.text-bg-warning.me-1 실패
+                                                        span ROBOT A0002
+                                                    p.small.mb-0 디지털마케팅팀 주보 업무 B
+                                                li.list-group-item.gantt-desc
+                                                    .d-flex.align-items-center.small
+                                                        span.badge.text-bg-danger.me-1 에러
+                                                        span ROBOT A0003
+                                                    p.small.mb-0 디지털마케팅팀 월보 업무 C
+                                                li.list-group-item.gantt-desc
+                                                    .d-flex.align-items-center.small
+                                                        span.badge.text-bg-success.me-1 성공
+                                                        span ROBOT A0004
+                                                    p.small.mb-0 디지털마케팅팀 일보 업무 D
+                                            .gantt-wrap
+                                                #gantt
+block scripts
+    script(src="/static/lib/data/main_chart.js")
+    script(src="/static/lib/data/main_gantt.js")

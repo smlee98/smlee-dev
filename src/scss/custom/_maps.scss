@@ -1,0 +1,64 @@
+// Maps
+
+// Color system
+$theme-colors: map-merge(
+    $theme-colors,
+    (
+        "kyobo-blue": $kyobo-blue,
+        "kyobo-green": $kyobo-green,
+        "kyobo-gray": $kyobo-gray,
+        "kyobo-skyblue": $kyobo-skyblue,
+        "kyobo-accent-green": $kyobo-accent-green,
+        "kyobo-accent-blue": $kyobo-accent-blue,
+    )
+);
+
+// Spacing
+$spacers: map-merge(
+    $spacers,
+    (
+        6: $spacer * 4,
+        7: $spacer * 6,
+        8: $spacer * 7.5,
+        9: $spacer * 9,
+        10: $spacer * 10,
+    )
+);
+
+// Position
+$position-values: map-merge(
+    $position-values,
+    (
+        25: 25%,
+        75: 75%,
+    )
+);
+
+// Components
+$border-widths: map-merge(
+    $border-widths,
+    (
+        0: 0px,
+    )
+);
+
+$aspect-ratios: map-merge(
+    $aspect-ratios,
+    (
+        "0": 0,
+        "32x9": calc(9 / 32 * 100%),
+    )
+);
+
+$font-family-sans-serif: Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
+
+$font-sizes: map-merge(
+    $font-sizes,
+    (
+        7: $font-size-base * 0.75,
+        8: $font-size-base * 0.5,
+    )
+);

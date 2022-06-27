@@ -1,0 +1,109 @@
+// Variables
+
+// Color System
+$white: #fff;
+$black: #000;
+
+// Kyobo Brand Color
+$kyobo-blue: #121c72;
+$kyobo-green: #4dac26;
+$kyobo-gray: #cccccc;
+$kyobo-skyblue: #1c4196;
+$kyobo-accent-green: #0aa622;
+$kyobo-accent-blue: #2a81eb;
+
+// Kyobo Color Variables
+$primary: $kyobo-blue;
+$secondary: #e0e2e5;
+$success: #2eab2e;
+$info: #278acc;
+$warning: #e6753e;
+$danger: #e64c2e;
+
+// Options
+$enable-negative-margins: true;
+
+// Prefix for :root CSS variables
+$prefix: kb-;
+
+// Spacing
+$spacer: 1rem;
+
+// Body
+$body-bg: #f7f8f9;
+$accent-bg: shade-color($kyobo-skyblue, 10%);
+
+// Links
+$link-color: $kyobo-accent-blue;
+
+// Grid columns
+$grid-gutter-width: 2rem;
+$grid-row-columns: 8;
+
+// Container padding
+$container-padding-x: $grid-gutter-width * 0.5;
+
+// Components
+$border-radius: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+$border-radius-2xl: 2.5rem;
+$border-radius-pill: 50%;
+
+$box-shadow-lg: 0 1.5rem 3rem rgba($black, 0.1);
+
+$component-active-bg: $kyobo-accent-blue;
+
+$font-weight-bold: 700;
+$font-weight-extra: 800;
+
+$legend-margin-bottom: 0;
+$legend-font-size: 1.25rem;
+$legend-font-weight: $font-weight-bold;
+
+// Buttons + Forms
+$input-btn-focus-width: 1;
+
+// Navs
+$nav-pills-border-radius: $border-radius-pill;
+
+// Navbar
+$navbar-nav-link-padding-x: $spacer;
+$navbar-dark-color: rgba($white, 0.75);
+$navbar-dark-hover-color: $white;
+$navbar-light-color: rgba($black, 0.55);
+$navbar-light-hover-color: var(--#{$prefix}emphasis-color);
+
+// Accordion
+$accordion-button-active-bg: null;
+$accordion-button-active-color: $kyobo-accent-blue;
+
+// Popovers
+$popover-border-radius: var(--#{$prefix}border-radius);
+
+// Alerts
+$alert-padding-y: $spacer * 1.5;
+$alert-padding-x: $spacer * 1.5;
+$alert-border-radius: var(--#{$prefix}border-radius-lg);
+
+// Breadcrumbs
+$breadcrumb-item-padding-x: $spacer;
+$breadcrumb-divider: quote(\F285);
+
+//breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 500px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$container-max-widths: (
+    sm: 460px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+);

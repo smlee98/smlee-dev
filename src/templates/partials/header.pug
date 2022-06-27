@@ -1,0 +1,124 @@
+include ../mixins/logo
+
+mixin menu(item, key)
+    li.nav-item.position-relative
+        a.nav-link(
+            aria-current="page",
+            href="#",
+            role="button",
+            data-bs-toggle="collapse",
+            data-bs-target=`#${key}`,
+            aria-expanded="false"
+        )= item.field
+        .position-relative.position-lg-absolute.collapse-item
+            .collapse(id=key)
+                .card 
+                    .card-body
+                        each list in item.menu
+                            +menuDepth(list)
+
+mixin menuDepth(menus)
+    .topnav-category
+        span.topnav-header= menus.title
+        each menu in menus.contents
+            if menu.contents
+                span.topnav-item= menu.title
+                each submenu in menu.contents 
+                    a.topnav-item.sub(href=submenu.link)= submenu.title
+            else
+                a.topnav-item(href=menu.link)= menu.title
+
+mixin themeToggle(option)
+    li.nav-item.dropdown(class=option)
+        a#bd-theme.nav-link.dropdown-toggle.d-flex.align-items-center.rounded(
+            href="#",
+            data-bs-toggle="dropdown",
+            aria-expanded="false",
+            data-bs-display="static"
+        )
+            span#bd-icon
+                i.bi.bi-sun-fill
+        ul.dropdown-menu.dropdown-menu-end.bd-theme-toggles.position-absolute
+            each theme in [{"value": "light", "text": "라이트 모드", "icon" : "bi-sun-fill"}, {"value": "dark", "text": "다크 모드", "icon" : "bi-moon-fill"}, {"value": "auto", "text": "자동", "icon" : "bi-circle-half"}]
+                li
+                    button.dropdown-item.d-flex.align-items-center(
+                        type="button",
+                        data-theme-value=theme.value
+                    )
+                        span
+                            i.bi(class=theme.icon)
+                            span.ms-2= theme.text
+
+mixin searchBar
+    button#allSearch.btn.btn-sm.me-2(
+        type="button",
+        data-bs-toggle="modal",
+        data-bs-target="#searchModal"
+    )
+        span#allSearch-icon
+            i.bi.bi-search
+        span#allSearch-placement.ms-2 통합검색
+
+mixin favoriteDropdown
+    a#favoriteDropdown.nav-link.dropdown-toggle.rounded(
+        href="#",
+        role="button",
+        data-bs-toggle="dropdown",
+        aria-expanded="false"
+    ) 즐겨찾기
+    ul.dropdown-menu.dropdown-menu-end
+        li
+            a.dropdown-item(href="#") RPA 소개
+        li
+            a.dropdown-item(href="#") 한눈에 보는 RPA
+        li
+            a.dropdown-item(href="#") RPA 제안 TIP
+
+header.navbar.navbar-expand-lg.border-bottom.fixed-top.bg-body
+    nav.container
+        .navbar-brand
+            a(href="/")
+                +logoKyobo("navbar-logo")
+        #navbarOffcanvas.offcanvas.offcanvas-start(
+            tabindex="-1",
+            aria-labelledby="navbarOffcanvasLabel"
+        )
+            .offcanvas-header
+                h5#navbarOffcanvasLabel.offcanvas-title
+                    +logoKyobo("navbar-logo")
+                button.btn-close(
+                    type="button",
+                    data-bs-dismiss="offcanvas",
+                    aria-label="Close"
+                )
+            .offcanvas-body
+                .d-flex.flex-column.flex-lg-row.w-100
+                    ul#topnav-main.navbar-nav.me-auto.order-2.order-lg-1
+                        each item, key in menuList
+                            +menu(item, key)
+                    ul#topnav-sub.navbar-nav.flex-row.justify-content-between.align-items-center.order-1.order-lg-2
+                        li.nav-item.dropdown.position-relative
+                            a#userDropdown.nav-link.dropdown-toggle.rounded(
+                                href="#",
+                                role="button",
+                                data-bs-toggle="dropdown",
+                                aria-expanded="false"
+                            ) #[span.fw-bold 김교보]님 [75001111]
+                            ul.dropdown-menu.dropdown-menu-end.position-absolute
+                                li
+                                    h6.dropdown-header #[span.fw-bold 김교보]님 환영합니다.
+                                li
+                                    a.dropdown-item(href="#") 마이페이지
+                                li
+                                    a.dropdown-item(href="#") 로그아웃
+                        li.nav-item
+                            .vr.d-none.d-lg-flex.h-100
+                        li.nav-item.dropdown.position-relative
+                            +themeToggle
+        button.navbar-toggler.btn.btn-swatch(
+            type="button",
+            data-bs-toggle="offcanvas",
+            data-bs-target="#navbarOffcanvas",
+            aria-expanded="false"
+        )
+            span.navbar-toggler-icon

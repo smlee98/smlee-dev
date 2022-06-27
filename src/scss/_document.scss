@@ -1,0 +1,29 @@
+@mixin mobile {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+html,
+body {
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    -ms-overflow-style: none; // IE, Edge
+    scrollbar-width: none; // Firefox
+    word-break: keep-all;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    &::-webkit-scrollbar {
+        display: none; // Chrome , Safari , Opera
+    }
+}
+
+.vsc-controller {
+    display: none;
+}

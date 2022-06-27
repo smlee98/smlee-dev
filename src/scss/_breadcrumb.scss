@@ -1,0 +1,12 @@
+.breadcrumb {
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item {
+    + .breadcrumb-item {
+        &::before {
+            font-family: "bootstrap-icons";
+        }
+    }
+}

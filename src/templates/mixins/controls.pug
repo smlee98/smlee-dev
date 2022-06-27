@@ -1,0 +1,55 @@
+mixin input(id, inputType, size, placeholder, disabled, value)
+    if disabled
+        input.form-control.input-response(
+            id=id,
+            name=id,
+            type=inputType,
+            class=size,
+            placeholder=placeholder,
+            disabled
+        )
+    else
+        input.form-control.input-response(
+            id=id,
+            name=id,
+            type=inputType,
+            class=size,
+            placeholder=placeholder
+        )
+
+mixin select(id, options, size)
+    select(id=id, name=id, class=size)
+        each key, value in options
+            option(value=value)= key
+
+mixin radio(id, options, size)
+    .d-block
+    - let idx = 1;
+    each key, value in options
+        .form-check.form-check-inline
+            input.form-check-input(
+                id=`${id}-${idx}`,
+                type="radio",
+                name=id,
+                value=value,
+                class=size
+            )
+            label.form-check-label(for=`${id}-${idx++}`)= key
+
+mixin radioButton(id, options, size)
+    .btn-group.w-100(role="group", class=size)
+        - let idx = 1;
+            each key, value in options
+                input.btn-check(
+                    id=`${id}-${idx}`,
+                    type="radio",
+                    name=id,
+                    value=value,
+                    autocomplete="off"
+                )
+                label.btn.btn-outline-secondary.d-flex.align-items-center.justify-content-center(
+                    for=`${id}-${idx++}`
+                )= key
+
+mixin textArea(id, rows, size, placeholder)
+    textarea.form-control(id=id, rows=rows, placeholder=placeholder, class=size)

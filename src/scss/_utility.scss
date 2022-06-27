@@ -1,0 +1,63 @@
+$utilities: map-merge(
+    $utilities,
+    (
+        "background-color":
+            map-merge(
+                map-get($utilities, "background-color"),
+                (
+                    values:
+                        map-merge(
+                            map-get(
+                                map-get($utilities, "background-color"),
+                                "values"
+                            ),
+                            (
+                                "body": var(--#{$prefix}body-bg),
+                            )
+                        ),
+                )
+            ),
+        "font-weight": (
+            property: font-weight,
+            class: fw,
+            values: (
+                light: $font-weight-light,
+                lighter: $font-weight-lighter,
+                normal: $font-weight-normal,
+                bold: $font-weight-bold,
+                semibold: $font-weight-semibold,
+                bolder: $font-weight-bolder,
+                extra: $font-weight-extra,
+            ),
+        ),
+        "position": (
+            property: position,
+            responsive: true,
+            values: static relative absolute fixed sticky,
+        ),
+        "width": (
+            property: width,
+            class: w,
+            responsive: true,
+            values: (
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%,
+                auto: auto,
+            ),
+        ),
+        "height": (
+            property: height,
+            class: h,
+            responsive: true,
+            values: (
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%,
+                auto: auto,
+            ),
+        ),
+    )
+);

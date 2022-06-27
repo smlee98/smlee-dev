@@ -1,0 +1,29 @@
+mixin breadcrumb(path)
+    nav.border-bottom.sticky-top.bg-body(aria-label="breadcrumb")
+        .container.py-2
+            ol.row.g-0.breadcrumb.h-auto
+                li.col-auto.breadcrumb-item
+                    span
+                        i.bi.bi-house.opacity-50.me-2
+                        span.opacity-50 홈
+                each val in path
+                    li.col-auto.breadcrumb-item
+                        span= val
+
+mixin pagination
+    nav.mt-3(aria-label="pagination")
+        ul.pagination.justify-content-center
+            li.page-item.disabled
+                a.page-link(href="#", aria-label="Previous")
+                    span(aria-hidden="true")
+                        i.bi.bi-chevron-double-left
+            li.page-item.active
+                a.page-link(href="#") 1
+            li.page-item
+                a.page-link(href="#") 2
+            li.page-item
+                a.page-link(href="#") 3
+            li.page-item
+                a.page-link(href="#", aria-label="Next")
+                    span(aria-hidden="true")
+                        i.bi.bi-chevron-double-right

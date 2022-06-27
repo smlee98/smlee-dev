@@ -1,0 +1,13 @@
+@include mobile {
+    .dynamic-row {
+        border: var(--#{$prefix}border-width) solid
+            var(--#{$prefix}border-color-translucent);
+        margin-bottom: 1rem;
+        border-radius: 0.3rem;
+    }
+}
+
+.dynamic-row + .dynamic-row {
+    border-top: var(--#{$prefix}border-width) solid
+        var(--#{$prefix}border-color-translucent);
+}

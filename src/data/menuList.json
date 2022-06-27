@@ -1,0 +1,259 @@
+{
+    "rpaman": {
+        "field": "알파맨",
+        "menu": [
+            {
+                "title": "알파맨",
+                "id": "kyobo-rpaman",
+                "contents": [
+                    {
+                        "title": "RPA 소개",
+                        "link": "/rpaman/introduce-rpa"
+                    },
+                    {
+                        "title": "한눈에 보는 RPA",
+                        "link": "/rpaman/overview-rpa"
+                    },
+                    {
+                        "title": "RPA 제안 팁",
+                        "link": "#"
+                    },
+                    {
+                        "title": "질문과 답변",
+                        "link": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    "lifecycle": {
+        "field": "라이프사이클",
+        "menu": [
+            {
+                "title": "라이프사이클 관리",
+                "id": "kyobo-lifecycle",
+                "contents": [
+                    {
+                        "title": "RPA 제안하기",
+                        "link": "/lifecycle/rpa-suggestion"
+                    },
+                    {
+                        "title": "RPA 수정요청",
+                        "link": "#"
+                    },
+                    {
+                        "title": "접수 검토",
+                        "link": "#"
+                    },
+                    {
+                        "title": "RPA 구현하기",
+                        "id": "kyobo-rpa",
+                        "contents": [
+                            {
+                                "title": "My Task",
+                                "link": "#"
+                            },
+                            {
+                                "title": "업무평가",
+                                "link": "#"
+                            },
+                            {
+                                "title": "분석/설계",
+                                "link": "#"
+                            },
+                            {
+                                "title": "개발",
+                                "link": "#"
+                            },
+                            {
+                                "title": "테스트",
+                                "link": "#"
+                            },
+                            {
+                                "title": "이행셋팅",
+                                "link": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "operation": {
+        "field": "운영현황",
+        "menu": [
+            {
+                "title": "운영현황",
+                "id": "kyobo-operation",
+                "contents": [
+                    {
+                        "title": "마이페이지",
+                        "link": "/operation/mypage"
+                    },
+                    {
+                        "title": "RPA 적용업무",
+                        "link": "#"
+                    },
+                    {
+                        "title": "대시보드",
+                        "link": "#"
+                    },
+                    {
+                        "title": "업무처리 현황 모니터링",
+                        "link": "/operation/work-monitoring"
+                    },
+                    {
+                        "title": "예외 스케쥴링 요청",
+                        "link": "#"
+                    },
+                    {
+                        "title": "봇 효율성 모니터링",
+                        "link": "#"
+                    },
+                    {
+                        "title": "기간별 스케쥴 그래프",
+                        "link": "#"
+                    },
+                    {
+                        "title": "기간별 처리내역",
+                        "link": "#"
+                    },
+                    {
+                        "title": "성과관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "RPA 리더 관리",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "장애현황",
+                "id": "kyobo-disorder",
+                "contents": [
+                    {
+                        "title": "장애 조치현황",
+                        "link": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    "resource": {
+        "field": "자원관리",
+        "menu": [
+            {
+                "title": "매니저 실행",
+                "id": "kyobo-manager-practice",
+                "contents": [
+                    {
+                        "title": "프로세스 실행",
+                        "link": "#"
+                    },
+                    {
+                        "title": "예약",
+                        "link": "#"
+                    },
+                    {
+                        "title": "실행 대기열",
+                        "link": "#"
+                    },
+                    {
+                        "title": "실시간 모니터링",
+                        "link": "#"
+                    },
+                    {
+                        "title": "프로세스 실행결과",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "매니저 관리",
+                "id": "kyobo-manager-management",
+                "contents": [
+                    {
+                        "title": "스크립트 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "데이터셋 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "프로세스 관리",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "로봇 관리",
+                "id": "kyobo-robot-management",
+                "contents": [
+                    {
+                        "title": "로봇 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "로봇그룹 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "SSO 통합로그인 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "계정별 화면/권한 관리",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "리소스 모니터링",
+                "id": "kyobo-resource",
+                "contents": [
+                    {
+                        "title": "로봇 자원 사용률",
+                        "link": "#"
+                    },
+                    {
+                        "title": "서버 자원 사용률",
+                        "link": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    "admin": {
+        "field": "관리자 설정",
+        "menu": [
+            {
+                "title": "관리자 설정",
+                "id": "kyobo-admin",
+                "contents": [
+                    {
+                        "title": "메인화면 컨텐츠 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "담당자 권한 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "포털화면 권한 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "코드 관리",
+                        "link": "#"
+                    },
+                    {
+                        "title": "관리자 로그인",
+                        "link": "#"
+                    }
+                ]
+            }
+        ]
+    }
+}

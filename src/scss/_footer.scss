@@ -1,0 +1,10 @@
+$footer-height: 2.5rem;
+
+footer {
+    height: $footer-height;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 990 !important;
+}

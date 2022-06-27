@@ -1,0 +1,13 @@
+:root,
+[data-theme="light"] {
+    --#{$prefix}navbar-toggler-icon-bg-swatch: #{$navbar-light-toggler-icon-bg} !important;
+}
+[data-theme="dark"] {
+    .navbar-logo {
+        [class^="cls"] {
+            fill: #ffffff;
+        }
+    }
+
+    --#{$prefix}navbar-toggler-icon-bg-swatch: #{$navbar-dark-toggler-icon-bg} !important;
+}

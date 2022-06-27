@@ -1,0 +1,71 @@
+{
+    "name": "kyobo-rpa-portal",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/app.js",
+    "scripts": {
+        "watch": "nodemon --watch ./gulpfile.js --exec babel-node ./node_modules/.bin/gulp dev",
+        "build": "babel-node ./node_modules/.bin/gulp build",
+        "server": "nodemon --watch ./server/server.js --exec babel-node ./server/server.js",
+        "dploy": "dploy jenkins",
+        "eslint": "eslint",
+        "stylelint": "stylelint ./**/*.scss"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/smlee98/KYOBO-RPA-Portal.git"
+    },
+    "author": "Seungmin Lee",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/smlee98/KYOBO-RPA-Portal/issues"
+    },
+    "homepage": "https://github.com/smlee98/KYOBO-RPA-Portal#readme",
+    "dependencies": {
+        "bootstrap": "^5.2.0-beta1",
+        "bootstrap-icons": "^1.8.3",
+        "pretendard": "^1.2.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.7",
+        "@babel/node": "^7.16.8",
+        "@babel/preset-env": "^7.16.11",
+        "@popperjs/core": "^2.11.4",
+        "@prettier/plugin-pug": "^2.0.0",
+        "autoprefixer": "10.4.5",
+        "babel-node": "^0.0.1-security",
+        "babelify": "^10.0.0",
+        "browser-sync": "^2.27.9",
+        "browserify": "^17.0.0",
+        "cssnano": "^5.1.4",
+        "del": "^6.0.0",
+        "eslint": "^8.16.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.2.0",
+        "eslint-plugin-promise": "^6.0.0",
+        "express": "^4.17.3",
+        "gulp": "^4.0.2",
+        "gulp-postcss": "^9.0.1",
+        "gulp-pug": "^5.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-terser": "^2.1.0",
+        "gulp-util": "^3.0.8",
+        "jquery": "^3.6.0",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.16",
+        "postcss": "^8.4.12",
+        "prettier": "^2.6.2",
+        "pug": "^3.0.2",
+        "sass": "^1.49.9",
+        "stylelint": "^14.8.5",
+        "stylelint-config-prettier-scss": "^0.0.1",
+        "stylelint-config-standard-scss": "^4.0.0",
+        "vanillajs-datepicker": "^1.2.0",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
+    }
+}
