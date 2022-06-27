@@ -6,27 +6,21 @@ html(lang="ko", data-theme="light")
     head
         include partials/meta
         block head
-            title= "KYOBO RPA Portal"
+            title= "Portfolio SMLEE"
     body 
         //- include partials/preloader
 
         // HEADER START ===========
         include partials/header
         // MAIN START ===========
-        main.d-flex.flex-column.h-100
+        main
             block contents
-
-        // MANUAL START ===========
-        include partials/manual
 
         // FOOTER START ===========
         //- include partials/footer
-
-        // MODAL START ===========
-        include partials/modal
 
         // SCRIPT START ===========
         include partials/default-script
 
         block scripts
-        script(src="/static/js/kyobo.js")
+        script(src="/static/js/smlee.js")
